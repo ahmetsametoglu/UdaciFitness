@@ -2,9 +2,8 @@ import React from 'react';
 import { View, Text } from 'react-native';
 import PropTypes from 'prop-types';
 
-const Slider = props => {
+const UdaciStepper = props => {
   console.log(props.displayName);
-
   return (
     <View>
       <Text>{props.displayName}</Text>
@@ -12,6 +11,6 @@ const Slider = props => {
   );
 };
 
-Slider.propTypes = {};
+UdaciStepper.propTypes = {};
 
-export default Slider;
+export default UdaciStepper;
