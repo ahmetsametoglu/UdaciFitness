@@ -6,8 +6,8 @@ import { Provider } from 'react-redux';
 import { purple } from './utils/colors';
 
 import reducer from './store/reducers';
-import TabNav from './components/TabNav';
 import { Constants } from 'expo';
+import StackNav from './components/StackNav';
 
 const UdaciStatusBar = ({ backgroundColor, ...props }) => {
   return (
@@ -22,7 +22,7 @@ export default function App() {
     <Provider store={createStore(reducer)}>
       <SafeAreaView style={{ flex: 1 }}>
         <UdaciStatusBar backgroundColor={purple} barStyle="light-content" />
-        <TabNav />
+        <StackNav />
       </SafeAreaView>
     </Provider>
   );
