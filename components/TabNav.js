@@ -16,20 +16,18 @@ const router = {
     screen: History,
     navigationOptions: {
       tabBarLabel: 'History',
-      tabBarIcon: ({ tintColor }) =>
-        Platform.OS === 'ios' && (
-          <Ionicons name="ios-bookmarks" size={30} color={tintColor} />
-        )
+      tabBarIcon: ({ tintColor }) => (
+        <Ionicons name="ios-bookmarks" size={30} color={tintColor} />
+      )
     }
   },
   AddEntry: {
     screen: AddEntry,
     navigationOptions: {
       tabBarLabel: 'Add Entry',
-      tabBarIcon: ({ tintColor }) =>
-        Platform.OS === 'ios' && (
-          <FontAwesome name="plus-square" size={30} color={tintColor} />
-        )
+      tabBarIcon: ({ tintColor }) => (
+        <FontAwesome name="plus-square" size={30} color={tintColor} />
+      )
     }
   },
   Live: {
