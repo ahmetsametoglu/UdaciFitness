@@ -6,7 +6,7 @@ import { Provider } from 'react-redux';
 import { purple } from './utils/colors';
 
 import reducer from './store/reducers';
-import { Constants } from 'expo';
+import Constants from 'expo-constants';
 import StackNav from './components/StackNav';
 
 const UdaciStatusBar = ({ backgroundColor, ...props }) => {
