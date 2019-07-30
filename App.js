@@ -4,6 +4,7 @@ import { View, StatusBar, SafeAreaView } from 'react-native';
 import { createStore } from 'redux';
 import { Provider } from 'react-redux';
 import { purple } from './utils/colors';
+import { setLocalNotification } from './utils/helpers';
 
 import reducer from './store/reducers';
 import Constants from 'expo-constants';
@@ -17,13 +18,19 @@ const UdaciStatusBar = ({ backgroundColor, ...props }) => {
   );
 };
 
-export default function App() {
-  return (
-    <Provider store={createStore(reducer)}>
-      <SafeAreaView style={{ flex: 1 }}>
-        <UdaciStatusBar backgroundColor={purple} barStyle="light-content" />
-        <StackNav />
-      </SafeAreaView>
-    </Provider>
-  );
+export default class App extends React.Component {
+  componentDidMount() {
+    setLocalNotification();
+  }
+
+  render() {
+    return (
+      <Provider store={createStore(reducer)}>
+        <SafeAreaView style={{ flex: 1 }}>
+          <UdaciStatusBar backgroundColor={purple} barStyle="light-content" />
+          <StackNav />
+        </SafeAreaView>
+      </Provider>
+    );
+  }
 }
