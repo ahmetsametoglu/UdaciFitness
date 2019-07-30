@@ -10,7 +10,9 @@ import { Ionicons } from '@expo/vector-icons';
 import {
   getMetricMetaInfo,
   timeToString,
-  getDailyReminderValue
+  getDailyReminderValue,
+  clearLocalNotification,
+  setLocalNotification
 } from '../utils/helpers';
 import { submitEntry, removeEntry } from '../utils/api';
 import { connect } from 'react-redux';
@@ -91,7 +93,7 @@ class AddEntry extends Component {
     this.toHome();
     submitEntry({ key, entry });
 
-    // Clear local notification
+    clearLocalNotification().then(setLocalNotification);
   };
 
   reset = () => {
